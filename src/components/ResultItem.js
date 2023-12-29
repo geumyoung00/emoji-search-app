@@ -1,7 +1,16 @@
 import React from 'react';
+import style from './ResultItem.module.css';
 
-const ResultItem = () => {
-	return <li>내용 보여주기</li>;
+const ResultItem = ({ title, symbol }) => {
+	const copyHandler = () => {
+		navigator.clipboard.writeText(symbol);
+	};
+	return (
+		<li onClick={copyHandler} className={style.listItem}>
+			<span>{symbol}</span>
+			{title}
+		</li>
+	);
 };
 
 export default ResultItem;

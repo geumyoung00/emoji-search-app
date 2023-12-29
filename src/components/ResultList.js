@@ -2,12 +2,14 @@ import React from 'react';
 import ResultItem from './ResultItem';
 import style from './ResultList.module.css';
 
-const Result = () => {
+const ResultList = ({ resultList }) => {
 	return (
 		<ul className={style.resultList}>
-			<ResultItem />
+			{resultList.map(item => (
+				<ResultItem title={item.title} symbol={item.symbol} key={item.title} />
+			))}
 		</ul>
 	);
 };
 
-export default Result;
+export default ResultList;

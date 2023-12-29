@@ -1,0 +1,12 @@
+.listItem + .listItem {
+	margin-top: 10px;
+}
+
+.listItem span {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.listItem {
+	cursor: pointer;
+}
