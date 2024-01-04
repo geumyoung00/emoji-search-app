@@ -1,8 +1,9 @@
 import React from 'react';
 import ResultItem from './ResultItem';
 import style from './ResultList.module.css';
+import { Emoji } from '../types/type';
 
-const ResultList = ({ resultList }) => {
+const ResultList = ({ resultList }: { resultList: Emoji[] }) => {
 	return (
 		<ul className={style.resultList}>
 			{resultList.map(item => (

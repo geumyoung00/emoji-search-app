@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 import style from './ResultItem.module.css';
 
-const ResultItem = ({ title, symbol }) => {
+const ResultItem = ({ title, symbol }: { title: string; symbol: string }) => {
 	const [isCopied, setIsCopied] = useState(false);
 	const [isMouseOver, setIsMouseOver] = useState(false);
 
-	const hoverHandler = e => {
-		setIsMouseOver(true);
+	const toggle = () => {
+		setIsMouseOver(prev => !prev);
 	};
 
-	const outHandler = () => {
-		setIsMouseOver(false);
-	};
-
-	const copyHandler = e => {
+	const copyHandler = () => {
 		navigator.clipboard.writeText(symbol);
 		setIsCopied(true);
 		function timmer() {
@@ -25,8 +21,8 @@ const ResultItem = ({ title, symbol }) => {
 	return (
 		<li
 			onClick={copyHandler}
-			onMouseOver={hoverHandler}
-			onMouseOut={outHandler}
+			onMouseOver={toggle}
+			onMouseOut={toggle}
 			className={style.listItem}
 		>
 			<div className={`${style.tooltip} ${isMouseOver ? style.show : null}`}>

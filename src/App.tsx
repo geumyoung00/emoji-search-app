@@ -3,11 +3,12 @@ import './App.css';
 import SearchForm from './components/SearchForm';
 import ResultList from './components/ResultList';
 import emojiList from './data/emojiList.json';
+import { Emoji } from './types/type';
 
 function App() {
-	const [resultList, setResultList] = useState([]);
-	const onSubmit = text => {
-		const filteredItems = emojiList.filter(item =>
+	const [resultList, setResultList] = useState<Emoji[]>([]);
+	const onSubmit = (text: string) => {
+		const filteredItems = emojiList.filter((item: Emoji) =>
 			item.keywords.split(' ').includes(text)
 		);
 		setResultList(filteredItems);
