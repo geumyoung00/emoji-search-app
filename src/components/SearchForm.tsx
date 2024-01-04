@@ -1,12 +1,13 @@
 import style from './SearchForm.module.css';
 
-const SearchForm = ({ onSubmit }: { onSubmit: (text: string) => void }) => {
+const SearchForm = ({ onSubmit }: { onSubmit: (value: string) => void }) => {
 	const submitHandler = (e: React.FormEvent) => {
 		e.preventDefault();
-		const target = e.target as HTMLInputElement;
-		const text = target.value;
-		onSubmit(text);
-		target.value = '';
+		const target = e.target as HTMLFormElement;
+		const { value } = target.search;
+		onSubmit(value);
+		// target.search.value = '';
+		target.reset();
 	};
 
 	return (

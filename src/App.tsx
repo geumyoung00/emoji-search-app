@@ -7,9 +7,9 @@ import { Emoji } from './types/type';
 
 function App() {
 	const [resultList, setResultList] = useState<Emoji[]>([]);
-	const onSubmit = (text: string) => {
+	const onSubmit = (value: string) => {
 		const filteredItems = emojiList.filter((item: Emoji) =>
-			item.keywords.split(' ').includes(text)
+			item.keywords.split(' ').includes(value)
 		);
 		setResultList(filteredItems);
 	};
