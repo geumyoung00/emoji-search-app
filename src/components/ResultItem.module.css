@@ -1,0 +1,34 @@
+.listItem + .listItem {
+	margin-top: 10px;
+}
+
+.listItem span {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.listItem {
+	cursor: pointer;
+	position: relative;
+}
+
+.listItem .tooltip {
+	display: block;
+	font-size: 14px;
+	line-height: 32px;
+	color: #fff;
+	width: auto;
+	height: auto;
+	padding: 0 10px;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 4px;
+	position: absolute;
+	left: 0;
+	top: calc(-100% - 14px);
+	visibility: hidden;
+}
+
+.listItem .tooltip.show {
+	visibility: visible;
+}
